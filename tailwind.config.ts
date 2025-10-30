@@ -13,7 +13,15 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ['Poppins', 'sans-serif'],
+        body: ['Lora', 'serif'],
+      },
       colors: {
+        'wood-light': 'hsl(var(--wood-light))',
+        'wood-natural': 'hsl(var(--wood-natural))',
+        'wood-green': 'hsl(var(--wood-green))',
+        'wood-dark': 'hsl(var(--wood-dark))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
