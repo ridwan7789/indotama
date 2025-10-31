@@ -1,18 +1,26 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import woodTexture from '@/assets/wood-texture.jpg';
-import heroImage from '@/assets/hero-wood.jpg';
+import logs from '@/assets/products/logs.jpg';
+import stackedPlywood from '@/assets/products/stacked-plywood.jpg';
+import blockboardLayers from '@/assets/products/blockboard-layers.jpg';
+import plywoodSheet from '@/assets/products/plywood-sheet.jpg';
+import woodSurface1 from '@/assets/products/wood-surface-1.jpg';
+import plywoodStack from '@/assets/products/plywood-stack.jpg';
+import lvlLayers from '@/assets/products/lvl-layers.jpg';
+import woodSurface2 from '@/assets/products/wood-surface-2.jpg';
 
 const GallerySection = () => {
   const { t } = useLanguage();
 
   const galleryImages = [
-    { src: heroImage, alt: 'Plywood manufacturing' },
-    { src: woodTexture, alt: 'Wood texture detail' },
-    { src: heroImage, alt: 'Production facility' },
-    { src: woodTexture, alt: 'Veneer quality' },
-    { src: heroImage, alt: 'Stacked products' },
-    { src: woodTexture, alt: 'Wood processing' },
+    { src: logs, alt: 'Sengon and Albasia logs' },
+    { src: stackedPlywood, alt: 'Stacked plywood production' },
+    { src: blockboardLayers, alt: 'Blockboard layered structure' },
+    { src: plywoodSheet, alt: 'High quality plywood sheet' },
+    { src: woodSurface1, alt: 'Natural wood surface texture' },
+    { src: plywoodStack, alt: 'Plywood panel stack' },
+    { src: lvlLayers, alt: 'LVL laminated veneer layers' },
+    { src: woodSurface2, alt: 'Premium wood grain detail' },
   ];
 
   return (
@@ -31,7 +39,7 @@ const GallerySection = () => {
           <p className="text-lg text-muted-foreground">{t('gallery.subtitle')}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}

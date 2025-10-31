@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { products, Product } from '@/data/products';
-import woodTexture from '@/assets/wood-texture.jpg';
+import { productImages } from '@/data/productImages';
 
 const ProductsSection = () => {
   const { language, t } = useLanguage();
@@ -39,10 +39,10 @@ const ProductsSection = () => {
               <div className="relative bg-card rounded-lg overflow-hidden shadow-natural hover:shadow-lifted transition-all duration-300 h-full flex flex-col">
                 <div
                   className="h-48 bg-cover bg-center relative overflow-hidden"
-                  style={{ backgroundImage: `url(${woodTexture})` }}
+                  style={{ backgroundImage: `url(${productImages[product.id]})` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60"></div>
-                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/30 transition-colors"></div>
+                  <div className="absolute inset-0 bg-wood-dark/20 group-hover:bg-wood-dark/30 transition-colors"></div>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-lg font-heading font-semibold text-foreground mb-4 flex-1">
