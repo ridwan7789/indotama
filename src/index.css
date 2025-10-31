@@ -8,50 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Natural Wood Color Palette */
-    --background: 35 30% 96%;
-    --foreground: 0 0% 17%;
+    /* Blue-Wood Professional Color Palette */
+    --background: 35 25% 97%;
+    --foreground: 210 15% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 17%;
+    --card-foreground: 210 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 17%;
+    --popover-foreground: 210 15% 20%;
 
-    --primary: 30 28% 60%;
+    --primary: 205 65% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 35% 80%;
-    --secondary-foreground: 0 0% 17%;
+    --secondary: 205 45% 85%;
+    --secondary-foreground: 210 15% 20%;
 
-    --muted: 30 20% 90%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 35 20% 92%;
+    --muted-foreground: 210 10% 45%;
 
-    --accent: 80 15% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 30 35% 70%;
+    --accent-foreground: 210 15% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 30 28% 60%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 205 65% 55%;
 
     --radius: 0.75rem;
     
     /* Custom Design Tokens */
-    --wood-light: 30 35% 80%;
-    --wood-natural: 30 28% 60%;
-    --wood-green: 80 15% 55%;
-    --wood-dark: 0 0% 17%;
+    --blue-primary: 205 65% 55%;
+    --blue-dark: 210 60% 35%;
+    --blue-light: 205 45% 85%;
+    --wood-accent: 30 35% 70%;
+    --wood-natural: 35 25% 90%;
     
     /* Gradients */
-    --gradient-wood: linear-gradient(135deg, hsl(var(--wood-light)), hsl(var(--wood-natural)));
-    --gradient-hero: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--wood-light)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--blue-primary)), hsl(var(--blue-dark)));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--wood-natural)) 100%);
+    --gradient-wood: linear-gradient(135deg, hsl(var(--wood-accent)), hsl(var(--wood-natural)));
     
     /* Shadows */
-    --shadow-natural: 0 10px 40px -10px hsl(var(--wood-natural) / 0.2);
-    --shadow-lifted: 0 20px 60px -20px hsl(var(--wood-dark) / 0.15);
+    --shadow-natural: 0 10px 40px -10px hsl(var(--blue-primary) / 0.25);
+    --shadow-lifted: 0 20px 60px -20px hsl(var(--blue-dark) / 0.2);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,33 +76,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 25 15% 15%;
-    --foreground: 30 35% 90%;
+    --background: 210 20% 12%;
+    --foreground: 205 30% 92%;
 
-    --card: 25 15% 18%;
-    --card-foreground: 30 35% 90%;
+    --card: 210 18% 16%;
+    --card-foreground: 205 30% 92%;
 
-    --popover: 25 15% 18%;
-    --popover-foreground: 30 35% 90%;
+    --popover: 210 18% 16%;
+    --popover-foreground: 205 30% 92%;
 
-    --primary: 30 35% 80%;
-    --primary-foreground: 0 0% 17%;
+    --primary: 205 65% 60%;
+    --primary-foreground: 210 20% 12%;
 
-    --secondary: 30 28% 25%;
-    --secondary-foreground: 30 35% 90%;
+    --secondary: 210 25% 25%;
+    --secondary-foreground: 205 30% 92%;
 
-    --muted: 30 20% 25%;
-    --muted-foreground: 30 20% 65%;
+    --muted: 210 15% 22%;
+    --muted-foreground: 205 20% 65%;
 
-    --accent: 80 15% 45%;
+    --accent: 30 45% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 25%;
-    --input: 30 15% 25%;
-    --ring: 30 35% 80%;
+    --border: 210 15% 25%;
+    --input: 210 15% 25%;
+    --ring: 205 65% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -133,13 +135,17 @@ All colors MUST be HSL.
         90deg,
         transparent,
         transparent 2px,
-        hsl(var(--wood-natural) / 0.05) 2px,
-        hsl(var(--wood-natural) / 0.05) 4px
+        hsl(var(--wood-natural) / 0.08) 2px,
+        hsl(var(--wood-natural) / 0.08) 4px
       );
   }
   
   .gradient-wood {
     background: var(--gradient-wood);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
   }
   
   .shadow-natural {
