@@ -32,11 +32,8 @@ const ProductsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground relative inline-block">
-            <span className="relative z-10">{t('products.title')}</span>
-            <span className="absolute top-0 left-0 text-wood-dark/30 transform translate-x-1 -translate-y-1 -z-10" aria-hidden="true">
-              {t('products.title')}
-            </span>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
+            {t('products.title')}
           </h2>
           <p className="text-lg text-wood-black">{t('products.subtitle')}</p>
         </motion.div>

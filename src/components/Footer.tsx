@@ -29,9 +29,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10 mb-12">
           {/* Company Info */}
           <div className="wood-card p-6 rounded-xl backdrop-blur-sm border border-border/30">
-            <h3 className="text-xl font-heading font-bold mb-4 text-primary relative inline-block">
-              <span className="relative z-10">{t('hero.title')}</span>
-              <span className="absolute top-0 left-0 text-wood-dark/30 transform translate-x-1 -translate-y-1 -z-10" aria-hidden="true">{t('hero.title')}</span>
+            <h3 className="text-xl font-heading font-bold mb-4 text-primary">
+              {t('hero.title')}
             </h3>
             <p className="text-sm text-wood-black">{t('footer.tagline')}</p>
           </div>
