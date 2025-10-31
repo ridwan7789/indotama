@@ -12,40 +12,55 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-wood-dark text-wood-light py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="relative overflow-hidden border-t-2 border-primary/20 py-16"
+      style={{
+        backgroundImage: `url('/src/assets/back.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
+      {/* Decorative 3D elements */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-wood-accent/5 blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid md:grid-cols-3 gap-10 mb-12">
           {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-heading font-bold mb-4">PT. Indotama Omicron Kahar</h3>
-            <p className="text-sm opacity-90">{t('footer.tagline')}</p>
+          <div className="wood-card p-6 rounded-xl backdrop-blur-sm border border-border/30">
+            <h3 className="text-xl font-heading font-bold mb-4 text-primary relative inline-block">
+              <span className="relative z-10">PT. Indotama Omicron Kahar</span>
+              <span className="absolute top-0 left-0 text-wood-dark/30 transform translate-x-1 -translate-y-1 -z-10" aria-hidden="true">PT. Indotama Omicron Kahar</span>
+            </h3>
+            <p className="text-sm text-wood-black">{t('footer.tagline')}</p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-heading font-semibold mb-4">Quick Links</h4>
-            <nav className="space-y-2">
+          <div className="wood-card p-6 rounded-xl backdrop-blur-sm border border-border/30">
+            <h4 className="text-lg font-heading font-semibold mb-4 text-primary">Quick Links</h4>
+            <nav className="space-y-3">
               <button
                 onClick={() => scrollToSection('hero')}
-                className="block text-sm opacity-90 hover:opacity-100 hover:text-wood-natural transition-colors"
+                className="block text-sm text-wood-black hover:text-primary transition-colors w-full text-left py-1"
               >
                 {t('nav.home')}
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="block text-sm opacity-90 hover:opacity-100 hover:text-wood-natural transition-colors"
+                className="block text-sm text-wood-black hover:text-primary transition-colors w-full text-left py-1"
               >
                 {t('nav.about')}
               </button>
               <button
                 onClick={() => scrollToSection('products')}
-                className="block text-sm opacity-90 hover:opacity-100 hover:text-wood-natural transition-colors"
+                className="block text-sm text-wood-black hover:text-primary transition-colors w-full text-left py-1"
               >
                 {t('nav.products')}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="block text-sm opacity-90 hover:opacity-100 hover:text-wood-natural transition-colors"
+                className="block text-sm text-wood-black hover:text-primary transition-colors w-full text-left py-1"
               >
                 {t('nav.contact')}
               </button>
@@ -53,17 +68,16 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="text-lg font-heading font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-sm opacity-90">
-              <p>Purworejo, Jawa Tengah</p>
-              <p>Indonesia</p>
+          <div className="wood-card p-6 rounded-xl backdrop-blur-sm border border-border/30">
+            <h4 className="text-lg font-heading font-semibold mb-4 text-primary">Contact</h4>
+            <div className="space-y-3 text-sm text-wood-black">
+              <p>{t('contact.addressText')}</p>
               <p>info@indotamaok.com</p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-wood-light/20 pt-8 text-center text-sm opacity-75">
+        <div className="border-t border-border/30 pt-8 text-center text-sm text-wood-black">
           <p>© {currentYear} {t('footer.copyright')}. All rights reserved.</p>
         </div>
       </div>

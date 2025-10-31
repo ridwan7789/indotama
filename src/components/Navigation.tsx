@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
-import logo from '@/assets/logo.png';
 
 const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -42,38 +41,38 @@ const Navigation = () => {
             onClick={() => scrollToSection('hero')}
             className="flex items-center hover:opacity-80 transition-opacity"
           >
-            <img src={logo} alt="PT. Indotama Omicron Kahar" className="h-12 w-auto" />
+            <img src="/logo.png" alt="PT. Indotama Omicron Kahar" className="h-20 w-auto" />
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-2">
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-wood-black hover:text-primary transition-colors hover:bg-accent/30"
             >
               {t('nav.home')}
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-wood-black hover:text-primary transition-colors hover:bg-accent/30"
             >
               {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection('products')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-wood-black hover:text-primary transition-colors hover:bg-accent/30"
             >
               {t('nav.products')}
             </button>
             <button
               onClick={() => scrollToSection('gallery')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-wood-black hover:text-primary transition-colors hover:bg-accent/30"
             >
               {t('nav.gallery')}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-wood-black hover:text-primary transition-colors hover:bg-accent/30"
             >
               {t('nav.contact')}
             </button>
@@ -82,7 +81,7 @@ const Navigation = () => {
               onClick={toggleLanguage}
               variant="outline"
               size="sm"
-              className="gap-2"
+              className="gap-2 ml-2"
             >
               <Globe className="h-4 w-4" />
               {language === 'en' ? 'ID' : 'EN'}
@@ -115,31 +114,31 @@ const Navigation = () => {
           <div className="md:hidden py-4 space-y-3 border-t border-border">
             <button
               onClick={() => scrollToSection('hero')}
-              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-wood-black hover:bg-muted rounded-lg transition-colors"
             >
               {t('nav.home')}
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-wood-black hover:bg-muted rounded-lg transition-colors"
             >
               {t('nav.about')}
             </button>
             <button
               onClick={() => scrollToSection('products')}
-              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-wood-black hover:bg-muted rounded-lg transition-colors"
             >
               {t('nav.products')}
             </button>
             <button
               onClick={() => scrollToSection('gallery')}
-              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-wood-black hover:bg-muted rounded-lg transition-colors"
             >
               {t('nav.gallery')}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors"
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-wood-black hover:bg-muted rounded-lg transition-colors"
             >
               {t('nav.contact')}
             </button>

@@ -22,6 +22,7 @@ export default {
         'wood-natural': 'hsl(var(--wood-natural))',
         'wood-green': 'hsl(var(--wood-green))',
         'wood-dark': 'hsl(var(--wood-dark))',
+        'wood-black': 'hsl(var(--wood-black))',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -92,6 +93,9 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        'wood-texture': "url('./src/assets/wood-texture.jpg')",
       },
     },
   },

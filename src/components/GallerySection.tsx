@@ -24,8 +24,20 @@ const GallerySection = () => {
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="gallery" className="py-20 relative overflow-hidden"
+      style={{
+        backgroundImage: `url('/src/assets/back.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}>
+      {/* Decorative 3D elements */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-wood-accent/5 blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,10 +45,10 @@ const GallerySection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-wood-black">
             {t('gallery.title')}
           </h2>
-          <p className="text-lg text-muted-foreground">{t('gallery.subtitle')}</p>
+          <p className="text-lg text-wood-black">{t('gallery.subtitle')}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -47,7 +59,7 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative aspect-square overflow-hidden rounded-lg shadow-natural hover:shadow-lifted transition-all duration-300 group cursor-pointer"
+              className="relative aspect-square overflow-hidden rounded-lg shadow-natural hover:shadow-lifted transition-all duration-300 group cursor-pointer wood-card"
             >
               <img
                 src={image.src}

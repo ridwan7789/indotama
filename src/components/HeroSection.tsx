@@ -1,24 +1,7 @@
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Box } from '@react-three/drei';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import heroImage from '@/assets/hero-wood.jpg';
-import woodTexture from '@/assets/wood-texture.jpg';
-import * as THREE from 'three';
-import { useLoader } from '@react-three/fiber';
-import { TextureLoader } from 'three';
-
-const WoodBox = () => {
-  const texture = useLoader(TextureLoader, woodTexture);
-  
-  return (
-    <Box args={[2, 2, 2]} rotation={[0.3, 0.5, 0]}>
-      <meshStandardMaterial map={texture} />
-    </Box>
-  );
-};
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -32,48 +15,52 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background with indo.jpg */}
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `url('/src/assets/indo.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background"></div>
-      </div>
-
-      {/* 3D Canvas */}
-      <div className="absolute inset-0 z-10 pointer-events-none opacity-30">
-        <Canvas camera={{ position: [0, 0, 5] }}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 5]} intensity={1} />
-          <WoodBox />
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
-        </Canvas>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/70"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 text-center">
+      <div className="relative z-20 container mx-auto px-4 text-center py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="wood-card p-8 rounded-xl max-w-4xl mx-auto backdrop-blur-sm"
         >
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6">
-            {t('hero.title')}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary mb-6">
+            <span className="block transform transition-transform hover:scale-105">
+              {t('hero.title')}
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-wood-black mb-10 max-w-2xl mx-auto">
             {t('hero.subtitle')}
           </p>
-          <Button
-            onClick={scrollToProducts}
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lifted"
-          >
-            {t('hero.cta')}
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              onClick={scrollToProducts}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lifted px-8 py-6 text-lg"
+            >
+              {t('hero.cta')}
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={scrollToProducts}
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg"
+            >
+              View Products
+            </Button>
+          </div>
         </motion.div>
 
         {/* Scroll Indicator */}
@@ -82,7 +69,7 @@ const HeroSection = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <ChevronDown className="h-8 w-8 text-muted-foreground" />
+          <ChevronDown className="h-8 w-8 text-wood-dark" />
         </motion.div>
       </div>
     </section>
