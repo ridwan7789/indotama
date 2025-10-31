@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -39,9 +40,9 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-heading font-bold text-foreground hover:text-primary transition-colors"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
-            PT. IOK
+            <img src={logo} alt="PT. Indotama Omicron Kahar" className="h-12 w-auto" />
           </button>
 
           {/* Desktop Navigation */}
