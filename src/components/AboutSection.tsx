@@ -15,7 +15,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 relative overflow-hidden"
       style={{
-        backgroundImage: `url('/src/assets/back.png')`,
+        backgroundImage: `url('/assets/back.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'

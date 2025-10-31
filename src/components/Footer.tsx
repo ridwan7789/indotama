@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden border-t-2 border-primary/20 py-16"
       style={{
-        backgroundImage: `url('/src/assets/back.png')`,
+        backgroundImage: `url('/assets/back.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
